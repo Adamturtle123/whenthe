@@ -1,0 +1,13 @@
+{"collidables":{
+    
+    "dirt.png":[0,0,20,20],
+    
+    "edge l.png":[0,0,20,20],
+    "edge r.png":[0,0,20,20],
+    "grass.png":[0,0,20,20],
+    "grass l.png":[0,0,16,20],
+    "grass r.png":[0,0,16,20]
+
+
+
+}}
