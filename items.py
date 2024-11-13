@@ -30,7 +30,7 @@ class Item(Entity):
                     s  = Timer().wait(3)
                     if s == False:
                         
-                        projs.append(Projectile(item.hitbox.x + 10, item.hitbox.y + 10 ,2,5, "rifle", self.angle*-1 , "assets/items/bullet.png"))
+                        projs[self.item_name].append(Projectile(item.hitbox.x + 10, item.hitbox.y + 10 ,2,5, "rifle", self.angle*-1 , "assets/items/bullet.png"))
                         self.magazine -= 1
                         self.fire_rate += 1
                         Timer().reset()
@@ -73,12 +73,44 @@ class Item(Entity):
         
         return self.reach
 
+                    
+
     def hold_item(self, selected_item, target, display, scroll): #it was selected_item.rotated_image changed to image
         img_copy = pygame.transform.rotate(selected_item.image, (selected_item.angle))
         selected_item.hitbox.x = target.hitbox.x
         selected_item.hitbox.y = target.hitbox.y
         display.blit(img_copy, ((selected_item.hitbox.x + 10 - scroll[0]) - int(img_copy.get_width()/2) , (selected_item.hitbox.y + 10 - scroll[1]) - int(img_copy.get_height()/2)))
+    
+    #def hold_item(self, selected_item, target, display, scroll):
+    # Rotate the gun by applying the correct angle
+       # img_copy = pygame.transform.rotate(selected_item.image, -selected_item.angle)
+
+    # Update gun position to match the player's position (use fine-tuned offsets)
+        #gun_offset_x = 10  # Adjust this if necessary
+        #gun_offset_y = 10  # Adjust this if necessary
+        #selected_item.hitbox.x = target.hitbox.x
+        #selected_item.hitbox.y = target.hitbox.y
+
+    # Get the rect for the rotated image, centered at the gun's intended location
+        #img_rect = img_copy.get_rect(center=(selected_item.hitbox.x + gun_offset_x - scroll[0], 
+                                         #selected_item.hitbox.y + gun_offset_y - scroll[1]))
+
+    # Debugging information to see what's happening
+        #print(f"Gun Center: {selected_item.hitbox.x + gun_offset_x}, {selected_item.hitbox.y + gun_offset_y}")
+        #print(f"Rotated Image Rect: {img_rect.topleft}")
+        #print(f"Gun Angle (Degrees): {selected_item.angle}")
+
+    # Blit the rotated image at the new position based on the adjusted rect
+        #
+        # display.blit(img_copy, img_rect.topleft)  
         
+    
+    
+
+
+
+
+
         
         
         

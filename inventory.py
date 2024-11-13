@@ -5,7 +5,7 @@ class Inventory():
         self.slot_index = 0
         self.slot_selector = 1
         self.inventory_slots = [[],[],[],[],[]]
-        
+        self.bought = False
         self.inventory = {
         }
         

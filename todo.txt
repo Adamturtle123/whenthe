@@ -1,0 +1,86 @@
+#----Todo list:
+#-------Main stuff-------:
+#create window and all simple logic(easy) (DONE)
+#load the map (DONE)
+#load up the player use the entity.py (DONE)
+#code the player logic :
+#----collusion (done)
+#----walking (DONE)
+#----double jump (sorta) it's done nigga
+
+
+#-------Game logic------:
+-------Animation-------:
+#Create animation system:
+
+#load in animation images in a list:
+----first open up the directory where all the images are
+----iterate through all the path inside the directory
+---- we need to unify the images names like this [walk_0.png, walk_1.png]
+---- get the images names by ignoring the .png from the entire string
+
+----use the path to load in all the images
+---- add these loaded images to a list inside a dictionary this dictionary will have a key with the name of the state (since we unify name, we use the name of the image for the state)
+---- each entity will have an instance from the animation class
+
+---- create a set_action method where we can decide what action shoud play: 
+#iterate through these images
+#display each image by an index so img_list[i], where i is the key_frame the frame where we are at
+#I have a better idea!
+
+I want an animation system that let's you load each animation and know the 'state'or action that animation is peforming
+and let's you access each key_frame so if you have a hit animation and you want it to do something when we're hitting and on the 5th frame say.
+
+I have another suggestion of putting all the images in a dictionary and the key of the dictionray is the state that the animation is peforming
+and this key points to the list of images that the animation consist of.
+
+I want a way to let us control the speed of each frame, basically how long each frame last 
+
+
+
+
+
+-----shop logic-------:
+#code shop system that let's you buy plants (Half done) -----> if player press e: make him buy something (later)
+  ------button detection (done)
+  ------ when player press the buy button, the shop will spawn a plant and player can pick it up
+  ------ shop will decrease from the player's money 
+
+#ability to plant these shurbs
+#make plants grow cycle using timers, when plant reach final form draw the cluster then ability to pick it up
+#make simple inventory slots (like in heroes)
+#make ability to sell plants to shop and add score
+
+
+
+------plant-----
+#code plant class (inherits from entity and item for short make it inherit from item)
+
+#abilty to pick up plants
+#ability to plant plants    
+#ability for the plant to grow over time into 3 different phases 
+#at last phase make plants be able to be harvested and when harvest the fruit gets added to your inventory
+
+
+
+
+#ability to pick up the rifle and put inventory (DONE)---
+#make ability to gun follow cursor (SORTA) it's done nigga bug: (The rotation is so gunky fix it!!) (FIXED)---
+#make ability to shoot with gun (Bug) (when we shoot the bullet can change direction when it's spawned as if we're controlling it) (done)---
+
+#abilty to shoot gun: (done)--
+check if we use the left click: (done)--
+then add projectile objects inside the bullets list (it's going to be passed by the item_func) (done)---
+
+
+#handle bullet:( done)
+move the bullet x by the cos of the gun angle (make sure you pass the gun angle when you create the projectile object to avoid being able to modify bullet angle later.)
+the same with y---
+done ---
+
+#Bug : Whenever we shoot the bullets  doesn't shoot at direction of the gun(revisable)
+#Bug (I changed the angle to increamenting it manually and not by the get_direction function, and added red line to detect where exactly the mouse looking at) the mouse misses the direction of the gun
+#-------enemies-----:
+#make mask when got hit (done)
+#make melee enemy (slime)
+#make ranged enemy (idk a peashooter)
